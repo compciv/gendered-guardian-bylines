@@ -14,6 +14,7 @@ def get_usable_name(namestr):
      - "Interview by Laura Barnett"
      - "Al Gore, former US vice-president, and David Blood"
      - "Andrew Mueller, Julia Raeside, Martin Skegg and Ali Catterall"
+     - "Juliette Garside in Barcelona and Samuel Gibbs
 
     So we'll do this:
 
@@ -48,7 +49,7 @@ ct = 0
 for a in articles:
     ct += 1
     uname = get_usable_name(a['byline'])
-    print("Article", ct, uname, "from", a['byline'])
+    print("Article", ct, "extracted: --",  uname, "-- from:", a['byline'])
     xresult = detect_gender(uname)
     a['usable_name'] = uname
     a['gender'] = xresult['gender']
