@@ -6,7 +6,7 @@ WRANGLED_DATA_FILE = join('tempdata', 'wrangled_articles.csv')
 CLASSIFIED_DATA_FILE = join('tempdata', 'classifed_articles.csv')
 
 
-def get_usable_name(namestr):
+def extract_usable_name(namestr):
     """
     namestr can be many forms:
      - "Peter Bradshaw"
@@ -48,7 +48,7 @@ wcsv.writeheader()
 ct = 0
 for a in articles:
     ct += 1
-    uname = get_usable_name(a['byline'])
+    uname = extract_usable_name(a['byline'])
     print("Article", ct, "extracted: --",  uname, "-- from:", a['byline'])
     xresult = detect_gender(uname)
     a['usable_name'] = uname
