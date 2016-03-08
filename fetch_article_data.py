@@ -3,6 +3,9 @@ import requests
 from os import makedirs
 from os.path import join, exists
 from datetime import date, timedelta
+START_DATE = date(2015, 3, 1)
+END_DATE = date(2015, 5, 31)
+
 
 ARTICLES_DIR = join('tempdata', 'articles')
 makedirs(ARTICLES_DIR, exist_ok=True)
@@ -26,8 +29,6 @@ my_params = {
 
 # day iteration from here:
 # http://stackoverflow.com/questions/7274267/print-all-day-dates-between-two-dates
-start_date = date(2015, 3, 1)
-end_date = date(2015, 5, 31)
 dayrange = range((end_date - start_date).days + 1)
 for daycount in dayrange:
     dt = start_date + timedelta(days=daycount)
